@@ -1,0 +1,15 @@
+h1,h2, h3, span {
+    margin: 0;
+}
+
+
+.container {
+    max-width: 500px;
+    height: 100vh;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 20% 80%;
+    text-align: center;
+    padding: 25px 5px;
+}
