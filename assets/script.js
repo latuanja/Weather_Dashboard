@@ -4,8 +4,8 @@ var lng = "";
 
 var APIKey = "dd1b0371c21fc82ebaf3890f20045d6c";
 
-var forecastDisplay = "#five-day-display";
-var currentWeatherDisplay = "#display-current-weather";
+var forecastDisplay = $("#five-day-display");
+var currentWeatherDisplay = $("#display-current-weather");
 
 var savedCitiesArray = ["Saint Louis"];
 
@@ -13,7 +13,8 @@ var savedCitiesArray = ["Saint Louis"];
 
 
 //code for current date variable
-var now = moment( );
+
+//var now = moment();
 
 $("#submit-btn").on("click", function () {
     city = $("#user-input").val();
