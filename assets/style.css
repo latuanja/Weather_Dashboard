@@ -36,7 +36,7 @@ h2 {
     font-size: 40px;
 }
 #side-bar {
-    background-color: rgb(230, 230, 230);
+    background-color: grey;
   
     
 }
@@ -58,10 +58,15 @@ form {
     margin-top: 10px;
     height: 500px;
     margin-bottom: 30px;
-   
 
     
 }
+
+#current-icon {
+    width: 100px !important;
+    height: 100px !important;
+}
+
 .daily-forecast{
     margin: 10px; 
     margin-top: 10px;
