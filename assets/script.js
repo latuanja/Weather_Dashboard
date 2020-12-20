@@ -1,19 +1,19 @@
-var city = "St. Louis";
+var city = "Saint Louis";
 var lat = "";
 var lng = "";
 
 var APIKey = "dd1b0371c21fc82ebaf3890f20045d6c";
 
-var forecastDisplay = $("#five-day-display");
-var currentWeatherDisplay = $("#display-current-weather");
+var forecastDisplay = "#five-day-display";
+var currentWeatherDisplay = "#display-current-weather";
 
-var savedCitiesArray = ["St. Louis"];
+var savedCitiesArray = ["Saint Louis"];
 
 
 
 
 //code for current date variable
-var now = moment();
+var now = moment( );
 
 $("#submit-btn").on("click", function () {
     city = $("#user-input").val();
@@ -58,7 +58,7 @@ function openWeatherAPIRequest() {
     .then(function(response) {
         console.log("response:", response);
 
-        savedCityNameToArray(response);
+        saveCityNameToArray(response);
         $("#current-city-name").text(response.name);
         $("#current-date").text(now.format("dddd MMMM Do"));
 
@@ -66,7 +66,7 @@ function openWeatherAPIRequest() {
         currentWeatherDisplay.empty();
         forecastDisplay.empty();
         lat = response.coord.lat;
-        lng = response.coord.lon;
+        lng = response.coord.lng;
 
         oneCallRequest(lat, lng);
     });
@@ -143,7 +143,7 @@ function displayFiveDayForecast(daily, date) {
     var icon = $("<img class='icons' src=" + iconURL + " alt='Weather icon'>");
 
     var futureTemp = $("<h5>").text("Temp: " + temp + " °F");
-    var futureHumidity = $("<h5>").text("Humidity: " = daily.humidity + "%");
+    var futureHumidity = $("<h5>").text("Humidity: " + daily.humidity + "%");
 
     cardBody.append(cardTitle, $("<hr>"), icon, futureTemp, futureHumidity);
     card.append(cardBody);
