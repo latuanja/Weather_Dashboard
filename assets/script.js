@@ -92,7 +92,75 @@ function oneCallRequest(lat, lng) {
         generateButtons();
 
         $(".city-btn").on("click", function (){
-            
-        })
-    })
-}
+            console.log("clicked");
+            city = $(this).text();
+            console.log("clicked city: " + $(this).text());
+            openWeatherAPIRequest();
+
+        });
+    });
+};
+
+function displayCurrentWeather(current) {
+    var iconcode = current.weather[0].icon;
+    var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
+    $("#current-icon").attr("src", iconURL);
+
+    var temp = Math.floor((current.temp - 273.15) * 1.80 + 32);
+
+    var currentTemp = $("<h4>").text("Temperatur: " + temp + " °F");
+    var currentHumidity = $("<h4>").text("Humidity: " + current.humidity + "%");
+    var currentWind = $("<h4>").text("Wind Speed: " + current.wind_speed + " MPH");
+    var currentUV = $("<h4 id='uvi'> ").text("UV Index: ");
+
+    if (current.uvi <= 2) {
+        currentUV.append("<span id='uvi-low'>" + current.uvi);
+
+    }
+    else if (current.uvi > 2 && current.uvi <= 7) {
+        currentUV.append("<span id='uvi-mid'>" + current.uvi);
+
+    }
+    else if (current.uvi > 7) {
+        currentUV.append("<span id='uvi-high'>" + current.uvi);
+    }
+
+    currentWeatherDisplay.append(currentTemp, currentHumidity, currentWind, currentUV);
+    console.log(current);
+
+};
+
+function displayFiveDayForecast(daily, date) {
+
+    var temp = Math.floor((daily.temp.day - 273.15) * 1.8 + 32);
+    var card = $("<div class='card daily-forecast'>");
+
+    var cardBody = $("<div class='card-body'>");
+    var cardTitle = $("<h3 class='card-title text-center'>").text(date);
+    
+    var iconcode = daily.weather[0].icon;
+    var iconURL = "https://openweathermap.org/img/w/" + iconcode + ".png";
+    var icon = $("<img class='icons' src=" + iconURL + " alt='Weather icon'>");
+
+    var futureTemp = $("<h5>").text("Temp: " + temp + " °F");
+    var futureHumidity = $("<h5>").text("Humidity: " = daily.humidity + "%");
+
+    cardBody.append(cardTitle, $("<hr>"), icon, futureTemp, futureHumidity);
+    card.append(cardBody);
+
+};
+
+function storeCities() {
+    localStorage.setItem("savedCities", JSON.stringify(savedCitiesArray));
+};
+
+function displayStoredCities() {
+    var storedCities = JSON.parse(localStorage.getItem("svedCities"));
+
+    if (storedCities != null) {
+        savedCitiesArray = storedCities;
+
+    };
+};
+
+openWeatherAPIRequest();
