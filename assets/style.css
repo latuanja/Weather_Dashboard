@@ -1,185 +1,50 @@
-.jumbotron {
+h1 {
     text-align: center;
 }
 
-h1,h2, h3, span {
-    margin: 0;
-}
-
-
-.container {
-    max-width: 500px;
-    height: 100vh;
-    border: 1px solid black;
-    margin: 0 auto;
-    display: grid;
-    grid-template-rows: 20% 80%;
+.lead {
     text-align: center;
-    padding: 25px 5px;
 }
 
-/*header{
-    text-align: center;
-    padding: 20px;
-    background: rgb(23, 8, 37);
-    height: 100px;
-    width: 100%;
-    color: rgb(255, 255, 255);
-    font-family: 'Bebas Neue', cursive;
-} */
 
-h1{
-    font-size: 60px ;
+.uvindex {
+    padding: 5px;
+    color: ghostwhite;
+    border-radius: 5px;
+}
 
+.forecast {
+    background-color: lightblue;
+    margin-left: 20px;
+    border-radius: 5px;
+    color: whitesmoke;
 }
-h2 {
-    font-size: 40px;
-}
-#side-bar {
+
+.fiveday {
     background-color: grey;
-  
-    
-}
-
-aside {
-    padding-top: 5px;
-    margin: 10px;
-}
-.my-container {
-   margin-left: 60px;
-    
-}
-form {
-    padding-top: 5px;
-}
-
-#current-city-info {
-    
-    margin-top: 10px;
-    height: 500px;
-    margin-bottom: 30px;
-
-    
-}
-
-#current-icon {
-    width: 100px !important;
-    height: 100px !important;
-}
-
-.daily-forecast{
-    margin: 10px; 
-    margin-top: 10px;
-    width: 16rem !important;
-    
-} 
-.five-day-display{
-    width: 100%;
-}
-
-.button-group {
-    margin-top: 15px;
-    
-}
-h4 {
-    padding-top: 50px;
-}
-
-.card {
-    width: 1400px;
-}
-.current-card {
-    width: 1350px;
-}
-
-.main-row {
-    height: 850px;
-}
-#uvi-low {
-    background-color: rgb(130, 255, 92);
     border-radius: 5px;
-    padding: 10px;
-    
+    padding: 20px;
 }
 
-#uvi-mid {
-    background-color: rgb(255, 190, 71);
+.current {
+    border: 1px dotted black;
+    padding: 20px;
     border-radius: 5px;
-    padding: 10px;
-    
-
+    background-color: lightgrey;
 }
 
-#uvi-high {
-    background-color: rgb(255, 80, 80);
-    border-radius: 5px;
-    padding: 10px;
-    
-}
-@media screen and (max-width: 1750px){
-    .my-container {
-        margin-left: 10px;
-        
-    }
-    .card {
-        width: 1000px;
-    }
-    .current-card {
-        width: 950px;
-    }
-    .daily-forecast{
-        margin: 5px; 
-
-        margin-top: 10px;
-        width: 12rem !important;
-    } 
-
-}
-@media screen and (max-width: 1350px){
-    .my-container {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .card {
-        width: 800px;
-    }
-    .current-card {
-        width: 740px;
-    }
-    .city-btn {
-        width: 150px;
-    }
-   
+body {
+    background-color: grey;
 }
 
-@media screen and (max-width: 750px){
-    .my-container {
-        margin: auto;
-        
-    }
-    .card {
-        width: auto;
-    }
-    .current-card {
-        width: auto;
-    }
-    .city-btn {
-        width: 100%;
-        
-    }
-    .daily-forecast{
-        margin: auto; 
-        margin-top: 10px;
-        width: 20rem !important;
-    } 
-    h2 {
-        font-size: 30px;
-    }
-   body{
-       text-align: center;
-   }
-   form{
-       margin-left: 25%;
-       margin-right: auto;
-   }
+.tablebackground {
+    background-color: lightgrey;
+}
+
+.heading {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.topheader {
+    background-color: lightgrey;
 }
